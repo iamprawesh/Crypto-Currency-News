@@ -11,10 +11,10 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-# import django_heroku
+import django_heroku
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-# django_heroku.settings(locals())
+django_heroku.settings(locals())
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -25,7 +25,7 @@ SECRET_KEY = 'x=kl6s0rf8=kcu8r*r&!czr^q9((w+)z(ez1-%@%^4fxbqa(ix'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://cryptonews999.herokuapp.com/']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -42,8 +42,8 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-    'whitenoise.storage.CompressedManifestStaticFilesStorage',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
+    # 'whitenoise.storage.CompressedManifestStaticFilesStorage',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
