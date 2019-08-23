@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block content %}
+ <div class="jumbotron">
+    <div class="container">
+      <hr>
+  <h1 class="display-4">Welcome to Crypto Currency News !</h1>
+  <p class="lead">Your source for Crypto currency Block Chain News. </p>
+  <hr class="my-4">
+  <!-- <a class="btn btn-dark btn-lg  btn-outline-success" href="#" role="button">Learn more</a> -->
+  </div>
+</div>
+<!-- <h3 class="display-4 text-center">Crypto Currency Stats</h3> -->
+<div class="container"> 
+<table class="table table-sm table-bordered table-hover table-striped mt-4 mb-5">
+      <thead class="thead-inverse">
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Price</th>
+          <th scope="col">Daily High</th>
+          <th scope="col">Daily Low</th>
+          <th scope="col">Market Cap</th>
+
+        </tr>
+      </thead>
+      <tbody class="">
+        <!-- {{ crypto }} -->
+  {% for key,value in price.DISPLAY.items %}
+        <tr>
+          <td>{{ key }}</td>
+          <td>{{ value.USD.PRICE }}</td>
+          <td>{{ value.USD.HIGHDAY }}</td>
+          <td>{{ value.USD.LOWDAY }}</td>
+          <td>{{ value.USD.MKTCAP }}</td>
+
+        </tr>
+
+  {% endfor %}
+
+      </tbody>
+    </table>
+    </div>
+<div class="container-fluid">
+    <div class="row"> 
+        <div class="col-1">
+            
+        </div>
+
+        <div class="col-10">            
+            <div class="container">
+                    <!-- <h1>News</h1> -->
+
+                <div class="row">
+               {% for x in api.Data %}
+                <div class="col-sm">
+                    <div class="card bg-faded mb-2" style="width: 15rem; ">
+                        <img src="{{ x.imageurl }}" class="card-img-top" alt="{{ x.source }}">
+                        <div class="card-body" style="">
+                            <h5 class="card-title">
+                            {{ x.title }}</h5>
+                            <p class="card-text" class="">
+                            <span>  <p style="font-size: 0.9em;" class="try">{{ x.body }}</p></span>
+                            <a href="{{ x.url }}" class="btn btn-outline-info btn-sm">Read More >></a>
+
+                        </p>
+                        </div>
+                    </div>
+                </div>
+               {% endfor %}
+
+                </div>
+            </div>
+        </div>       
+        <div class="col-1">
+            
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock %}

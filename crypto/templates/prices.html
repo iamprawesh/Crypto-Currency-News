@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- <h1>{{ quote }}</h1> -->
+{% if notfound %}
+<div class="alert alert-danger  text-center mb-0" role="alert">
+        {{ notfound }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+</div>
+{% endif %}
+
+{% if errstatus %}
+<div class="alert alert-dangertext-center mb-0" role="alert">
+        {{ errstatus }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+</div>
+{% endif %}
+
+
+{% if status %}
+<div class="alert alert-success text-center mb-0" role="alert">
+  {{ status }} for {{ quote }}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{% endif %}
+<!-- {{ crypto }} -->
+      {% for key,value in crypto.DISPLAY.items %}
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+            <h1 class="display-4">{{ key }}</h1>
+            <p class="lead"><strong>Price :</strong>{{ value.USD.PRICE }}<br><hr>
+          <strong>High price within 24 hours </strong>{{ value.USD.HIGHDAY }}<br><hr>
+          <strong>Low price within 24 hours </strong>{{ value.USD.LOWDAY }}<br><hr>
+          <strong>Total Market Capital</strong>{{ value.USD.MKTCAP }}<br><hr></p>
+          </div>
+        </div>
+          {% endfor %}
+{% endblock %}
