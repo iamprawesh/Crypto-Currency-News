@@ -25,7 +25,7 @@ SECRET_KEY = 'x=kl6s0rf8=kcu8r*r&!czr^q9((w+)z(ez1-%@%^4fxbqa(ix'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['cryptonews101.heroku.com']
 
 
 # Application definition
