@@ -23,9 +23,9 @@ django_heroku.settings(locals())
 SECRET_KEY = 'x=kl6s0rf8=kcu8r*r&!czr^q9((w+)z(ez1-%@%^4fxbqa(ix'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://cryptonews999.herokuapp.com/']
 
 
 # Application definition
